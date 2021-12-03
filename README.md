@@ -49,8 +49,7 @@ by using
 
 ```conda install -c conda-forge dipy click```
 
-After setting up your virtual environment you will need to configure VS Code to use it by setting your workspace's `config.json` file.
-
+After setting up your virtual environment you will need to configure VS Code to use it by setting your workspace's `config.json` file, see https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment
 
 
 ### Clone repository
