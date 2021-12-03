@@ -30,35 +30,28 @@ The extensions we will reference today are
 
 One of the major strengths of Python compared to other programming languages is the vast amount of 3rd party packages available, which come in all shapes and sizes (you can even write one yourself pretty easily!). However, with this vastness comes a fair bit of complexity in managing shared dependencies, particularly ones that require specific versions. To get around this, it is common to create a fresh "environment" for each project/workspace and install only the packages you need for it in order to avoid clashes.
 
-There are two popular ways to create virtual environments in Python either using the built-in `venv` module or the more general software package manager [Anaconda](https://anaconda.org/anaconda/python) (which Chris explained how to use in the "Intro to Python" train-track earlier this week). Either way is fine to use for this tutorial, so if you are set up with "Conda" already it is fine to use that, but it is a bit quicker to get started with `venv` so we will go with that by default.
+There are two popular ways to create virtual environments in Python either using the built-in `venv` module or the more general software package manager [Anaconda](https://anaconda.org/anaconda/python) (which Chris explained how to use in the "Intro to Python" train-track earlier this week). Since we will be relying on some packages that have C dependencies we will use Anaconda to manage them for this tutorial.
 
-To create a new virtual env in Python 3 simply type
+To do this you first create a new conda environment
 
-```python3 -m venv /a/directory/to/install/yourenv```
+```conda create --name bhg-devtools```
 
-which will create a new virtual environment (i.e. place to install Python packages) in the `/a/directory/to/install/yourenv` directory. To activate the virtual environment, which you need to do **before** installing and using any of the packages, use
+and then activate it, which you need to do **before** installing or using your packages every time you open a new terminal
 
-```source /a/directory/to/install/yourenv/bin/activate``` on Linux/MacOs
+```conda activate bhg-devtools```
 
-and
-
-```???``` on Windows
-
-You should see the name of the directory (e.g. `(yourenv)`) as part of your command line prompt when the environment is activated.
-
-The two packages you need to install inside your virtual environment for today's session are
+The packages you will need to install inside your Conda environment for today's session are
 
 * dipy
 * click
 
 by using 
 
-```pip install dipy```
+```conda install -c conda-forge dipy click```
 
 After setting up your virtual environment you will need to configure VS Code to use it by setting your workspace's `config.json` file.
 
 
-## Write a simple package
 
 ### Clone repository
 
@@ -72,8 +65,20 @@ Should see virtually empty project with just a README file and gitignore.
 
 You will then pull some changes I have made upstream using the source control tab.
 
-### Dipy tutorial
+
+## Create Write a simple package using Dipy
+
+Use the examples shown in the [Dipy Quick Start Guide](https://dipy.org/documentation/1.4.1./examples_built/quick_start/#example-quick-start) to create a method in a new module (Python file) called `intensify` to load a nifti file, multiply its intensity and save it back to disk.
+
 ### Write command line using click
+
+Use `click` to create a script in a separate file that imports and runs your method in a command line tool that takes the following arguments/options
+
+* input file path (argument)
+* output file path (argument)
+* intensity (option with default value)
+
+
 
 ## Run, debug and test package
 
