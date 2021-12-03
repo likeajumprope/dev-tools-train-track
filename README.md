@@ -20,10 +20,11 @@ VS Code is a general purpose code editor that can be configured to be used for v
 
 <img width="1704" alt="extensions-tab" src="https://user-images.githubusercontent.com/1054870/144533458-92fdc895-b464-4c18-9d65-cd77021a7f4b.png">
 
-The extensions we will reference today are
+The extensions we will use/reference today are
 
 * Python
 * Github
+* Gitlens
 * Docker
 
 ### Virtual environments
@@ -44,10 +45,11 @@ The packages you will need to install inside your Conda environment for today's 
 
 * dipy
 * click
+* pytest
 
 by using 
 
-```conda install -c conda-forge dipy click```
+```conda install -c conda-forge dipy click pytest```
 
 After setting up your virtual environment you will need to configure VS Code to use it by selecting the Python interpreter for your workspace (see https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment)
 
@@ -69,7 +71,7 @@ You will then pull some changes I have made upstream using the source control ta
 
 ### Simple intensify method
 
-Use the examples shown in the [Dipy Quick Start Guide](https://dipy.org/documentation/1.4.1./examples_built/quick_start/#example-quick-start) to create a method in a new module, i.e. a Python file called `intensify.py`, to load a nifti file, multiply its intensity and save it back to disk.
+Use the examples shown in the [Dipy Quick Start Guide](https://dipy.org/documentation/1.4.1./examples_built/quick_start/#example-quick-start) to create three (trivial) methods in a new module, i.e. a Python file called `intensify.py`, to load a nifti file, multiply its intensity, and save it back to disk.
 
 ### Write command line using click
 
@@ -94,5 +96,50 @@ Open new terminal by pressing Ctrl-Shift-P (Cmd-Shift-P on Mac), typing "termina
 ```python3 your-script.py```
 
 ### Launch a script via launcher/debugger
+
+Create a launch.json file from the "Run and Debug" tab in the LHS menu
+
 ### Write a unittest with pytest
+
+Create a directory called `tests` and a file called `test_intensify.py` within it.
+
+Write a simple test that tests a small part of your code e.g.
+
+```python
+def test_intensify():
+    orig_image = dipy.load_nifti()
+    intensified_image = intensify(orig_image, 10)
+    assert np.max(my_image) == np.max(orig_image) * 10
+```
 ### Configure Conftest to break in exception
+
+Add a `conftest.py` file to allow unittests to break on exceptions in debug mode 
+
+```python
+import os
+import shutil
+from pathlib import Path
+from tempfile import mkdtemp
+import pytest
+
+
+@pytest.fixture
+def work_dir():
+    tmp_dir = tempfile.mkdtemp()
+    yield tmp_dir
+    shutil.rmtree(tmp_dir)
+
+# For debugging in IDE's don't catch raised exceptions and let the IDE
+# break at it
+if os.getenv('_PYTEST_RAISE', "0") != "0":
+
+    @pytest.hookimpl(tryfirst=True)
+    def pytest_exception_interact(call):
+        raise call.excinfo.value
+
+    @pytest.hookimpl(tryfirst=True)
+    def pytest_internalerror(excinfo):
+        raise excinfo.value
+
+```
+
