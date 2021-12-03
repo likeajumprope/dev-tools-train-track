@@ -4,12 +4,27 @@ Instructions for the Development tools (VS Code) train track
 
 ## Installation
 
-### Python itself
+### Python
 
 There are many different ways to install Python depending on your OS and preferences. Real Python give a nice list of them here
 https://realpython.com/installing-python/
 
 For the uninitated, there is a substantial difference between Python versions 2 & 3, which means most code written for one won't work for the other by default. Python 2 has been deprecated since 2020, so we will be working with Python 3 exclusively. Therefore, please make sure the Python you have installed is version 3 (e.g `python --version`), or ensure you always use the `python3` and `pip3` aliases.
+
+
+### Install VS Code + extensions
+
+Installing VS Code itself is pretty straightforward. Just [download](https://code.visualstudio.com/download) and [install](https://code.visualstudio.com/docs/setup/setup-overview) it from the visual studio website.
+
+VS Code is a general purpose code editor that can be configured to be used for virtually any programming language. This supported by a wide array of 3rd party extensions. New extensions can be added to your workspace by clicking on the "Extensions" tab on the bar on the LHS of the screen
+
+<img width="1704" alt="extensions-tab" src="https://user-images.githubusercontent.com/1054870/144533458-92fdc895-b464-4c18-9d65-cd77021a7f4b.png">
+
+The extensions we will reference today are
+
+* Python
+* Github
+* Docker
 
 ### Virtual environments
 
@@ -31,16 +46,13 @@ and
 
 You should see the name of the directory (e.g. `(yourenv)`) as part of your command line prompt when the environment is activated.
 
-### Install VS Code + extensions
+The two packages you need to install inside your virtual environment for today's session are
 
-Installing VS Code itself is pretty straightforward. Just [download](https://code.visualstudio.com/download) and [install](https://code.visualstudio.com/docs/setup/setup-overview) it from the visual studio website.
+* dipy
+* click
 
-VS Code is a general purpose code editor that can be configured to be used for virtually any programming language. This supported by a wide array of 3rd party extensions. New extensions can be added to your workspace by clicking on the "Extensions" tab on the bar on the LHS of the screen
+After setting up your virtual environment you will need to configure VS Code to use it by setting your workspace's `config.json` file.
 
-<img width="1704" alt="extensions-tab" src="https://user-images.githubusercontent.com/1054870/144533458-92fdc895-b464-4c18-9d65-cd77021a7f4b.png">
-
-
-https://code.visualstudio.com/docs/python/environments
 
 ## Write a simple package
 
