@@ -33,7 +33,12 @@ You should see the name of the directory (e.g. `(yourenv)`) as part of your comm
 
 ### Install VS Code + extensions
 
-[Download](https://code.visualstudio.com/download) and [install](https://code.visualstudio.com/docs/setup/setup-overview) Visual Studio Code
+Installing VS Code itself is pretty straightforward. Just [download](https://code.visualstudio.com/download) and [install](https://code.visualstudio.com/docs/setup/setup-overview) it from the visual studio website.
+
+VS Code is a general purpose code editor that can be configured to be used for virtually any programming language. This supported by a wide array of 3rd party extensions. New extensions can be added to your workspace by clicking on the "Extensions" tab on the bar on the LHS of the screen
+
+<img width="1549" alt="Screen Shot 2021-12-03 at 1 11 25 pm" src="https://user-images.githubusercontent.com/1054870/144533076-717bb891-3f5e-456e-bdcb-b0ddb6afc648.png">
+
 
 https://code.visualstudio.com/docs/python/environments
 
