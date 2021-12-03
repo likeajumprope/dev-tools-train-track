@@ -66,7 +66,11 @@ Create a fork of the https://github.com/brainhack-aus/dev-tools-train-track repo
 
 ![source-control-tab](https://user-images.githubusercontent.com/1054870/144535957-e6905dce-0218-4274-ac01-9e67c317389f.png)
 
-and open it as a new project
+and open it as a new project.
+
+Should see virtually empty project with just a README file and gitignore.
+
+You will then pull some changes I have made upstream using the source control tab.
 
 ### Dipy tutorial
 ### Write command line using click
