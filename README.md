@@ -66,9 +66,11 @@ Should see virtually empty project with just a README file and gitignore.
 You will then pull some changes I have made upstream using the source control tab.
 
 
-## Create Write a simple package using Dipy
+## Create Dipy program
 
-Use the examples shown in the [Dipy Quick Start Guide](https://dipy.org/documentation/1.4.1./examples_built/quick_start/#example-quick-start) to create a method in a new module (Python file) called `intensify` to load a nifti file, multiply its intensity and save it back to disk.
+### Simple intensify method
+
+Use the examples shown in the [Dipy Quick Start Guide](https://dipy.org/documentation/1.4.1./examples_built/quick_start/#example-quick-start) to create a method in a new module, i.e. a Python file called `intensify.py`, to load a nifti file, multiply its intensity and save it back to disk.
 
 ### Write command line using click
 
@@ -78,11 +80,20 @@ Use [click](https://click.palletsprojects.com/en/8.0.x/quickstart/#basic-concept
 * output file path (argument)
 * intensity (option with default value)
 
+### More advanced example
+
+If you are feeling confident you might want to work with this cool example to estimate the SNR of diffusion-weighted images
+https://dipy.org/documentation/1.4.1./examples_built/snr_in_cc/#example-snr-in-cc.
 
 
 ## Run, debug and test package
 
 ### Open a terminal within vscode and run script
+
+Open new terminal by pressing Ctrl-Shift-P (Cmd-Shift-P on Mac), typing "terminal" and selecting "new terminal". This is just a normal terminal so you can run your command line tool by
+
+```python3 your-script.py```
+
 ### Launch a script via launcher/debugger
 ### Write a unittest with pytest
 ### Configure Conftest to break in exception
