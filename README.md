@@ -51,6 +51,10 @@ The two packages you need to install inside your virtual environment for today's
 * dipy
 * click
 
+by using 
+
+```pip install dipy```
+
 After setting up your virtual environment you will need to configure VS Code to use it by setting your workspace's `config.json` file.
 
 
