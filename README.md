@@ -72,7 +72,7 @@ Use the examples shown in the [Dipy Quick Start Guide](https://dipy.org/document
 
 ### Write command line using click
 
-Use `click` to create a script in a separate file that imports and runs your method in a command line tool that takes the following arguments/options
+Use [click](https://click.palletsprojects.com/en/8.0.x/quickstart/#basic-concepts-creating-a-command) to create a script in a separate file that imports and runs your method in a command line tool that takes the following arguments/options
 
 * input file path (argument)
 * output file path (argument)
