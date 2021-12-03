@@ -21,7 +21,13 @@ To create a new virtual env in Python 3 simply type
 
 ```python3 -m venv /a/directory/on/your/system```
 
-which will create a new virtual environment (i.e. place to install Python packages) in the `/a/directory/on/your/system` directory. To activate the virtual environment
+which will create a new virtual environment (i.e. place to install Python packages) in the `/a/directory/on/your/system` directory. To activate the virtual environment, which you need to do **before** installing and using any of the packages, use
+
+```source /a/directory/on/your/system/bin/activate``` on Linux/MacOs
+
+and
+
+```???``` on Windows
 
 ### Install VS Code + extensions
 
