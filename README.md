@@ -62,7 +62,11 @@ After setting up your virtual environment you will need to configure VS Code to 
 
 ### Clone repository
 
-Create a fork of the https://github.com/brainhack-aus/dev-tools-train-track repository (i.e. this one).
+Create a fork of the https://github.com/brainhack-aus/dev-tools-train-track repository (i.e. this one) by using the source control tab
+
+![source-control-tab](https://user-images.githubusercontent.com/1054870/144535957-e6905dce-0218-4274-ac01-9e67c317389f.png)
+
+and open it as a new project
 
 ### Dipy tutorial
 ### Write command line using click
